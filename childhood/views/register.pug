@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    div(style="text-align: center; display: inline-block; width: 100%;")
+        .card.text-white.bg-success.mb-3(style='max-width: 20rem; left: 39.5%;')
+            .card-header Welcome!
+            .card-body
+                h4.card-title Your first lesson
+                p.card-text
+                    | Your mind is your canvas
+    include ./partials/msgs
+    form(action='/users/register' method='POST' style="width: 50%; position: absolute; left: 25%; top: 25%; background: transparent; border-radius: 15%; height: 70%")
+        fieldset
+            i.fa.fa-user-plus.fa-3x
+            legend(style="text-align: center; font-size: 270%;") Registration
+            .form-group
+                label(for='username') Username
+                input#username.form-control(type='text' aria-describedby='emailHelp' placeholder='Enter username' name="username")
+            .form-group
+                label(for='exampleInputEmail1') Email address
+                input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email' name="email")
+            .form-group
+                label(for='exampleInputPassword1') Password
+                input#exampleInputPassword1.form-control(type='password' placeholder='Password(at least 7 characters)' name="pass")
+            .form-group
+                label(for='exampleInputPassword2') Confirm Password
+                input#exampleInputPassword2.form-control(type='password' placeholder='Confirm Password' name="pass2")
+            button.btn.btn-success.btn-lg(type='submit') Submit
+            p(style="color: white; font-size: 225%;")
+                |Already a member? 
+                a(href='/users/login') Login

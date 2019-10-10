@@ -1,0 +1,9 @@
+if errors
+    each error in errors
+        div.alert.alert-warning.alert-dismissible.fade.show(role="alert" style="position: absolute; left: 30%; top: 37%") #{error.msg}
+
+if success_msg!=''
+    div.alert.alert-success.alert-dismissible.fade.show(role="alert" style="position: absolute; left: 38%; top: 35%") #{success_msg}
+
+if error_msg!=''
+    div.alert.alert-warning.alert-dismissible.fade.show(role="alert" style="position: absolute; left: 38%; top: 35%") #{error_msg}

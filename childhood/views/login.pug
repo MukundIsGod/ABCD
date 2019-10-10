@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    div(style="text-align: center; display: inline-block; width: 100%;")
+        .card.text-white.bg-info.mb-3(style='max-width: 20rem; left: 39.5%;')
+            .card-header The name is original
+            .card-body
+                h4.card-title Say no to plagiarism
+                p.card-text
+                    | Go ahead and log in
+    form(action='/users/login' method='POST' style="height: 60%; width: 30%; position: absolute; left: 35%; top: 25%; background: transparent; border-radius: 15%;")
+        fieldset
+            i.fa.fa-user.fa-3x
+            legend(style="text-align: center; font-size: 270%;") Any Body Can Draw!
+            .form-group
+                label(for='exampleInputEmail1') Email address
+                input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email' name="email")
+            .form-group
+                label(for='exampleInputPassword1') Password
+                input#exampleInputPassword1.form-control(type='password' placeholder='Password' name="pass")
+            button.btn.btn-success.btn-lg(type='submit') Sign in
+            p(style="color: white; font-size: 225%;")
+                |Not a member? 
+                a(href='/users/register') Register
+    include ./partials/msgs

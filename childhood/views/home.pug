@@ -1,0 +1,45 @@
+extends insidelayout
+
+block content
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+        a.navbar-brand(href='#') ABCD
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarColor03' aria-controls='navbarColor03' aria-expanded='false' aria-label='Toggle navigation') 
+            span.navbar-toggler-icon
+        #navbarColor03.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto                    
+                li.nav-item.active
+                    a.nav-link(href='/users/home')
+                        | Home 
+                        span.sr-only (current)
+                li.nav-item
+                    a.nav-link(href='/users/learn') Learn
+                li.nav-item
+                    a.nav-link(href='#') Posters
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='true') Categories
+                    .dropdown-menu(x-placement='bottom-start' style='position: absolute; transform: translate3d(0px, 44px, 0px); top: 0px; left: 0px; will-change: transform;' role="menu")
+                        a.dropdown-item(href='#') Simple
+                        a.dropdown-item(href='#') Caricature
+                        a.dropdown-item(href='#') Realistic
+                        .dropdown-divider
+                        img.dropdown-item(src="/cn.png" href='#')
+                li.nav-item
+                    a.nav-link(href='#') About
+            form.form-inline.my-2.my-lg-0(style="position: absolute; left: 30%; width: 60%")
+                input.form-control.mr-sm-2(type='text' placeholder='Search' style="width: 60%")
+                button.btn.btn-secondary.my-2.my-sm-0(type='submit') 
+                    i.fa.fa-search.fa-2x
+                img.dropdown-toggle(src="/darwin.gif" style="width: 10%; height: 100%; position: absolute; left: 100%" role="button" data-toggle="dropdown")
+                .dropdown-menu(x-placement='bottom-start' style='position: absolute; transform: translate3d(0px, 50px, 0px); top: 0px; left: 0px; will-change: transform; left: 100%' role="menu")
+                    a.dropdown-item(href='/users/profile') Profile
+                    a.dropdown-item(href='#') Settings
+                    a.dropdown-item(href='/logout') Logout
+    .bar#mainhoe
+        p.btn.btn-info(id="clickme" type="button" onclick="navopen()") &#9776;ClickMe!
+    .sidebar#sidehoe    
+        button.btn.btn-danger(onclick="navclose()" type="button") X
+        label.announcement COMPETITIONS
+        img(src="/competition.gif") 
+        a.nav-link(href='#' id="competition") Learn More   
+        img(src="/toontext.gif") 
+        a.nav-link(href='#' id="toontext") Learn More          
